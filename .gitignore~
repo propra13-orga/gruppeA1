@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+.settings/
+.loadpath
+*.launch
+=======
+.DS_Store
+>>>>>>> 9ccda8511099a7afd1ba0bcae152c7aa62d49a02
