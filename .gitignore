@@ -1,0 +1,9 @@
+
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+.settings/
+.loadpath
+*.launch
