@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 public class Frame extends JFrame implements ActionListener{
 
+	
 	private static final long serialVersionUID = 1L;
 	private JButton schliessen;
 	private JButton Options;
