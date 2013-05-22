@@ -1,4 +1,4 @@
-package gruppeA1.dungeon;
+
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -27,7 +27,7 @@ public class Gui extends JPanel implements ActionListener {
 		maintimer = new Timer(10,this);
 		maintimer.start();
 		
-		ImageIcon u = new ImageIcon("res/kachel.jpg");
+		ImageIcon u = new ImageIcon("res/kachel.png");
 		img = u.getImage();
 
 		}
