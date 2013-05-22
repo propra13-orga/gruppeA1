@@ -1,4 +1,4 @@
-package gruppeA1.dungeon;
+
 
 import java.awt.Graphics2D;
 import java.awt.Image;
