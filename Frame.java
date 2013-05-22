@@ -75,7 +75,7 @@ public class Frame extends JFrame implements ActionListener{
 		if (action.getSource()== Info){
 			Object[] options = {"ok"};
 			
-			JOptionPane.showOptionDialog(null, "programmiert von Dee!!","Information",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null,options,options[0]);
+			JOptionPane.showOptionDialog(null, "programmiert von Dorine Nanjala, Tim Wachsener, Alexander Schmelter, Alida Wolner und Alexandra Karina!","Information",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null,options,options[0]);
 		}
 		
 		if (action.getSource()== exit){
