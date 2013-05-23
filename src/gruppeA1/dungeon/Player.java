@@ -2,6 +2,7 @@ package gruppeA1.dungeon;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
@@ -11,6 +12,7 @@ public class Player extends Entity{
 	
 	int moveX = 0;
 	int moveY = 0;
+	int speed = 1;
 	
 	public Player(int x, int y) {
 		super(x, y);
@@ -22,30 +24,41 @@ public class Player extends Entity{
 		}
 	
 	public void draw(Graphics2D g){
-		g.drawImage(getplayerimage(),x,y,null);
 		
+		g.drawImage(getplayerimage(),x,y,null);
+		//g.draw(getBounds());
 	}
 	
 	public Image getplayerimage(){
 		
-		ImageIcon plimg = new ImageIcon("res/player.png");
+		ImageIcon plimg = new ImageIcon("res/player_down.png");
+		return plimg.getImage();
+		
+	}
+	public Image getdeadimage(){
+		
+		ImageIcon plimg = new ImageIcon("res/player_down.png");
 		return plimg.getImage();
 	}
-	
 	public void keyPressed(KeyEvent e){
+		
 		int key = e.getKeyCode();
 		
 		if(key == KeyEvent.VK_UP){
-			moveY = -2;
+			moveY = -speed;
+			
 		}
 		else if(key == KeyEvent.VK_DOWN){
-			moveY = 2;
+			moveY = speed;
+			
 		}
 		else if(key == KeyEvent.VK_LEFT){
-			moveX = -2;
+			moveX = -speed;
+			
 		}
 		else if(key == KeyEvent.VK_RIGHT){
-			moveX = 2;
+			moveX = speed;
+			
 		}
 		
 	}
@@ -64,7 +77,15 @@ public class Player extends Entity{
 		else if(key == KeyEvent.VK_RIGHT){
 			moveX = 0;
 		}
-		
 	}
-
+//	public void  kollision(){
+//		
+//		if (getBounds().intersects(getBounds())){
+//			
+//		}
+//	}
+//	public Rectangle getBounds(){
+//		return new Rectangle(x,y,getplayerimage().getWidth(null),getplayerimage().getHeight(null) );
+//	}
+	
 }

@@ -69,7 +69,7 @@ public class Frame extends JFrame implements ActionListener {
 				public static void fenster(){
 								JFrame fenster = new JFrame("Dungeon Crawler Deluxe");
 								fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-								fenster.setSize(900,800);
+								fenster.setSize(800,800);
 								fenster.setVisible(true);
 								fenster.add(new Gui());
 				}

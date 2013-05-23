@@ -21,13 +21,13 @@ public class Gui extends JPanel implements ActionListener {
 	
 	public Gui() {
 		setFocusable(true);
-		player = new Player(980,35);
+		player = new Player(1,45);
 		addKeyListener(new KeyAdapt(player));
 		
 		maintimer = new Timer(10,this);
 		maintimer.start();
 		
-		ImageIcon u = new ImageIcon("labyrinth.png");
+		ImageIcon u = new ImageIcon("res/labyrinth1.png");
 		img = u.getImage();
 
 		}
@@ -39,6 +39,8 @@ public class Gui extends JPanel implements ActionListener {
 		f2.drawImage(img,0,0,null);
 		
 		player.draw(f2);
+		Enemy e = new Enemy(320,315);
+		e.draw(f2);
 	}
 
 	@Override

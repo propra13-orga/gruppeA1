@@ -5,8 +5,9 @@ import java.awt.Graphics2D;
 
 public class Entity {
 
+		
 		int x, y;
-	
+		
 	public Entity (int x, int y) {
 		
 		this.x = x;
@@ -17,7 +18,7 @@ public class Entity {
 	//public void update();//
 	
 	public void draw(Graphics2D g){
-			
+		
 	}
 
 }
