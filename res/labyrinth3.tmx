@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="24" tileheight="24">
+ <tileset firstgid="1" name="sewer_tileset" tilewidth="24" tileheight="24">
+  <image source="../../../Program Files/Tiled/examples/sewer_tileset.png" trans="ff00ff" width="192" height="217"/>
+ </tileset>
+ <tileset firstgid="73" name="tmw_desert_spacing" tilewidth="24" tileheight="24">
+  <image source="../../../Program Files/Tiled/examples/tmw_desert_spacing.png" width="265" height="199"/>
+  <terraintypes>
+   <terrain name="Stein" tile="-1"/>
+   <terrain name="Neues Terrain erzeugen" tile="-1"/>
+  </terraintypes>
+  <tile id="7" terrain="0,0,0,0"/>
+  <tile id="53" terrain=",0,,0"/>
+  <tile id="54" terrain="0,0,0,0"/>
+  <tile id="64" terrain=",0,,"/>
+  <tile id="65" terrain="0,0,,"/>
+ </tileset>
+ <tileset firstgid="161" name="isometric_grass_and_water" tilewidth="24" tileheight="24">
+  <image source="../../../Program Files/Tiled/examples/isometric_grass_and_water.png" width="256" height="384"/>
+ </tileset>
+ <layer name="Hintergrund" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt1zsSgCAMBFBquRz3P42VMwwjI0g2IWSLFFoAT5aPOaWUleuq6u259+6rHUuDRDt1FeFCtdtWa/LsyMD+Ijv+5ONxoL7TaY6ZcXl29PbP0Wr3Y5Rn1uvVsVqnObT2+QLqC30v0XZo5grhsFgfdIw5tNeH5L+D5Xx4dyDyRkdMx8gYIzqs7rt0+MrVbufH6n8dHRgHKp900EEHHd4c6HsJHbq5Qp7JdMTN1ep80cFc0UEHHXa1wxh2ddzj/GoU
+  </data>
+ </layer>
+ <layer name="Labyrinthmauern" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt2TEKwCAQBdGt4+Vy/9PYmCYHWGc/M7C1PlAQXFW1muc5073uJMfUdLBKc7xnpqaDVdr90MHo/0aYWpoj5VzpYKSDlQ5WOljpYKWDlQ5WOljpYKWDlQ5WOljpYKWDlQ5WOlilOjrn+7O/uQeqYwOo5BMr
+  </data>
+ </layer>
+ <layer name="Hindernisse" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20ON6AAAAAAAAAAAADg3wAnEAAB
+  </data>
+ </layer>
+</map>

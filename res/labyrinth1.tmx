@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="24" tileheight="24">
+ <tileset firstgid="1" name="sewer_tileset" tilewidth="24" tileheight="24">
+  <image source="../../../Program Files/Tiled/examples/sewer_tileset.png" trans="ff00ff" width="192" height="217"/>
+ </tileset>
+ <tileset firstgid="73" name="tmw_desert_spacing" tilewidth="24" tileheight="24">
+  <image source="../../../Program Files/Tiled/examples/tmw_desert_spacing.png" width="265" height="199"/>
+  <terraintypes>
+   <terrain name="Stein" tile="-1"/>
+   <terrain name="Neues Terrain erzeugen" tile="-1"/>
+  </terraintypes>
+  <tile id="7" terrain="0,0,0,0"/>
+  <tile id="53" terrain=",0,,0"/>
+  <tile id="54" terrain="0,0,0,0"/>
+  <tile id="64" terrain=",0,,"/>
+  <tile id="65" terrain="0,0,,"/>
+ </tileset>
+ <layer name="Hintergrund" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztlk0OhSAMhFnr5d4FTTjqWxgTYwp0+mdVFrMRGPrRFlxLKetUGv0SSBPL5MA8OHtQPhb1xa3BEQe3fqM5kB5DerEXAzeXHI877hwPDq6HJQfaoxqPDPoCRyTbxoyPeye1xhB/jz5H70cJY/R9peHgzLeqcc231tgC7JmJ46ozxzbwiuLorT1ipiTtJ+9e4NbV1zksa6hVI9e4ojgquP6YT8Ug4aBiWm7IhzXH4SHpjywc59p8MscoH4g0HD0/i/54Gkdrz8wco3tXKy6HxftBsbyFo6UKzNXImyNKVv8llqqFji2Co1e3HEk9vfMRkbfJsas2PD2FnlWP447zfyuH9B3k5PfqX4EzlXBwznHEIXkLLe5rLQcal8V8pK68OKix87dqxOGdjxGHNh+9eVIObu9o3om3caBrpe+HVpraozQ5cnNM5dAfXgD4zQ==
+  </data>
+ </layer>
+ <layer name="Labyrinthmauern" width="50" height="50" visible="0" opacity="0.49">
+  <data encoding="base64" compression="zlib">
+   eJztlVEShDAIQz2I9z/nXqCFpAld1GamP9oGngW8r+u6z2q3/iklh8PBxUe8Rz6OukJrL+NAv9NuDqa3mB6McsiEcEQ5Vc+aCg7UoxtHBx0O3qNSqzNp9o7xr+gPFwfjX93nFffhVDUHGlOVkyO758hLlTJrnBy7egHhQD2+wIHIUffRPjSv3Rzos9m7KIcnczB36+iFCg62RrtyZPsZ7Z5X2ZlVdeBg/JnzlRzInSgL5WB7c/burRz/1pc5domJ5eJw9gXj6eYY5VCtw1FXV6t1NxNynvVU9FaO1f8gyhXtUeZ1Npdmz9WaRXJZiadysHk59kdnHf8PJC91Xmd+Ue2OznXliPaNzqk1ze5XZ8RTONSYu+SOdzg8cd1+Z/VaP4tncqE=
+  </data>
+ </layer>
+ <layer name="Hindernisse" width="50" height="50" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzt1cEJACAMA8Au4P7rim7gw5bA3QSBJrQKAIBjTQcALluEP163ZYsAJPK/8rkhyfSXCXpHN50DIMEGSsgAdg==
+  </data>
+ </layer>
+ <layer name="Gegner" width="50" height="50" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20ON6AAAAAAAAAAAADg3wAnEAAB
+  </data>
+ </layer>
+</map>
