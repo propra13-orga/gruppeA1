@@ -1,23 +1,26 @@
 package gruppeA1.dungeon;
 
 import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Rectangle;
-import java.awt.event.KeyEvent;
-
-import javax.swing.ImageIcon;
-
 
 public class Player extends Entity{
+	public Player(int x, int y, int size) {
+		super(x, y, size);
+	}
 	
-	int moveX = 0;
-	int moveY = 0;
-	int speed = 1;
+	public void draw(Graphics2D graphics2D) {
+		super.draw(graphics2D, 'p');
+	}
 	
-	public Player(int x, int y) {
-		super(x, y);
-		}
+	public void move(int x, int y) {
+		this.x = this.x + x;
+		this.y = this.y + y;
+	}
 	
+	public void moveTo(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	/*
 	public  void update(){
 		y += moveY;
 		x += moveX;	
@@ -87,5 +90,5 @@ public class Player extends Entity{
 //	public Rectangle getBounds(){
 //		return new Rectangle(x,y,getplayerimage().getWidth(null),getplayerimage().getHeight(null) );
 //	}
-	
+	*/
 }
