@@ -12,7 +12,7 @@ Jeder Buchstabe in der Mapdatei wird durch eine Grafik ersetzt. Folgende Tiles s
 
 * 0 - Eingang
 * x - Ausgang
-* w - Wasser, nicht begehbar (ACHTUNG: Jede Map muss mit Wasser eingerahmt werden!)
+* w - Wasser, nicht begehbar
 * s - Sand, begehbar
 * g - Gras, begehbar
 * e - Gegner, tödlich
