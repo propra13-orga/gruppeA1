@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
 
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import gruppeA1.dungeon.Tile;
@@ -26,9 +27,13 @@ public class Map extends JPanel {
 	private int currentLevel;
 	private int previousLevel;
 	
+	private int gewonnen = 0;
+	
 	private Tile[][] tiles;
 	private Player player;
 	private ArrayList<Enemy> enemies;
+	
+
 	
 	public Tile getTileAt(int x, int y) {
 		return this.tiles[x][y];
@@ -117,6 +122,8 @@ public class Map extends JPanel {
 	}
 	
 	private void win() {
+		gewonnen =1;
+		System.out.println("gewonnen");
 		/*
 		 * Spiel wurde gewonnen.
 		 * TO DO: Dialog zum bestätigen anzeigen und danach das Hauptmenü.
@@ -140,11 +147,16 @@ public class Map extends JPanel {
 				this.tiles[x][y].draw(graphics2D);
 			}
 		}
-		
+
 		this.player.draw(graphics2D);
 		
 		for (Enemy enemy: this.getEnemies()) {
 		    enemy.draw(graphics2D);
+		}
+		if(gewonnen == 1)
+		{
+			ImageIcon imageIcon = new ImageIcon("resources/bilder/gewonnenmeldung.png");
+			graphics2D.drawImage(imageIcon.getImage(), 90, 100, null);
 		}
 	}
 
@@ -172,6 +184,9 @@ public class Map extends JPanel {
 			break;
 		case KeyEvent.VK_DOWN:
 			targetTile = this.tiles[playerX][playerY+1];
+			break;
+		case KeyEvent.VK_ESCAPE:
+			//Frame schliessen
 			break;
 		}
 		
