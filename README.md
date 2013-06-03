@@ -1,10 +1,12 @@
-# Dungeon Crawler Deluxe Maps
+# Dungeon Crawler Deluxe
+
+## Maps
 
 Maps haben eine Größe von 20x20 teilen. Es können beliebig viele Maps im Ordner resources/maps angelegt werden, dabei muss nur auf eine durchgängige Nummerierung geachtet werden.
 
 Sollte die Anzahl an Maps geändert werden, muss außerdem die statische Variable maxLevel in der Map Klasse angepasst werden.
 
-# Dungeon Crawler Deluxe Tiles
+## Tiles
 
 Jeder Buchstabe in der Mapdatei wird durch eine Grafik ersetzt. Folgende Tiles sind verfügbar:
 
@@ -15,6 +17,6 @@ Jeder Buchstabe in der Mapdatei wird durch eine Grafik ersetzt. Folgende Tiles s
 * g - Gras, begehbar
 * e - Gegner, tödlich
 
-# TO DO
+## TO DO
 
 * win() und lose() in Map
