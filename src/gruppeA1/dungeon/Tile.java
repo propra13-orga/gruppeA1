@@ -10,7 +10,7 @@ public class Tile extends Entity {
 	}
 	
 	private boolean isWalkable;
-	private boolean isDeadly;
+	private boolean isEnemy;
 	private boolean isEntrance;
 	private boolean isExit;
 	
@@ -18,8 +18,8 @@ public class Tile extends Entity {
 		return isWalkable;
 	}
 	
-	public boolean isDeadly() {
-		return isDeadly;
+	public boolean isEnemy() {
+		return isEnemy;
 	}
 	
 	public boolean isEntrance() {
@@ -36,7 +36,7 @@ public class Tile extends Entity {
 		this.type = type;
 		
 		this.isWalkable = false;
-		this.isDeadly = false;
+		this.isEnemy = false;
 		this.isEntrance = false;
 		this.isExit = false;
 		
@@ -53,7 +53,7 @@ public class Tile extends Entity {
 			break;
 		case 'e':
 			this.isWalkable = true;
-			this.isDeadly = true;
+			this.isEnemy = true;
 			break;
 		case 'x':
 			this.isWalkable = true;

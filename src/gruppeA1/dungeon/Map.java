@@ -177,7 +177,7 @@ public class Map extends JPanel {
 		
 		this.player.moveTo(targetTile);
 		
-		if (targetTile.isDeadly()) {
+		if (targetTile.isEnemy()) {
 			this.lose();
 		}
 		

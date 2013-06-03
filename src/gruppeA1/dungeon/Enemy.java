@@ -12,7 +12,7 @@ public class Enemy extends MoveableEntity {
 	}
 	
 	public boolean moveTo(Tile tile) {
-		if (tile.isWalkable() && !tile.isDeadly()) {
+		if (tile.isWalkable() && !tile.isEnemy()) {
 			this.x = tile.getX();
 			this.y = tile.getY();
 			
