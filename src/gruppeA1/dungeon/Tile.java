@@ -69,8 +69,8 @@ public class Tile extends Entity {
 		
 		if(this.type == 'e') {
 			super.draw(graphics2D, 'g');
+		} else {
+			super.draw(graphics2D, this.type);
 		}
-		
-		super.draw(graphics2D, this.type);
 	}
 }

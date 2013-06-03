@@ -2,7 +2,7 @@ package gruppeA1.dungeon;
 
 import java.awt.Graphics2D;
 
-public class Player extends Entity{
+public class Player extends MoveableEntity{
 	public Player(int x, int y, int size) {
 		super(x, y, size);
 	}
@@ -11,15 +11,6 @@ public class Player extends Entity{
 		super.draw(graphics2D, 'p');
 	}
 	
-	public void move(int x, int y) {
-		this.x = this.x + x;
-		this.y = this.y + y;
-	}
-	
-	public void moveTo(int x, int y) {
-		this.x = x;
-		this.y = y;
-	}
 	/*
 	public  void update(){
 		y += moveY;

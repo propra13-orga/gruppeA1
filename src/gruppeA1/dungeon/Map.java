@@ -6,6 +6,8 @@ import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Timer;
 
 import javax.swing.JPanel;
 
@@ -26,6 +28,17 @@ public class Map extends JPanel {
 	
 	private Tile[][] tiles;
 	private Player player;
+	private ArrayList<Enemy> enemies;
+	
+	public Tile getTileAt(int x, int y) {
+		return this.tiles[x][y];
+	}
+	
+	public ArrayList<Enemy> getEnemies() {
+		return enemies;
+	}
+	
+	private Timer timer;
 	
 	public Map(int level) {
 		this.currentLevel = level;
@@ -36,6 +49,9 @@ public class Map extends JPanel {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		this.timer = new Timer();
+		this.timer.scheduleAtFixedRate(new MapTask(this), 500, 500);
 		
 		addKeyListener(new KeyDispatcher(this));
 		
@@ -51,6 +67,7 @@ public class Map extends JPanel {
 		int countY = 0;
 		
 		this.tiles = new Tile[sizeX][sizeY];
+		this.enemies = new ArrayList<Enemy>();
 		
 		while ((line = bufferedReader.readLine()) != null) {
 			countX = 0;
@@ -63,6 +80,10 @@ public class Map extends JPanel {
 				
 				if (type == 'x' && this.currentLevel < this.previousLevel) {
 					this.player = new Player(countX, countY, tileSize);
+				}
+				
+				if (type == 'e') {
+					this.getEnemies().add(new Enemy(countX, countY, tileSize));
 				}
 				
 				countX++;
@@ -121,6 +142,10 @@ public class Map extends JPanel {
 		}
 		
 		this.player.draw(graphics2D);
+		
+		for (Enemy enemy: this.getEnemies()) {
+		    enemy.draw(graphics2D);
+		}
 	}
 
 	public void action(KeyEvent keyEvent) {
@@ -150,9 +175,7 @@ public class Map extends JPanel {
 			break;
 		}
 		
-		if (targetTile.isWalkable()) {
-			this.player.moveTo(targetTile.getX(), targetTile.getY());
-		}
+		this.player.moveTo(targetTile);
 		
 		if (targetTile.isDeadly()) {
 			this.lose();
@@ -170,5 +193,18 @@ public class Map extends JPanel {
 		}
 		
 		repaint();
+	}
+	
+	public boolean tryToMoveEntity(MoveableEntity moveableEntity, int x, int y) {
+		int moveableEntityX = moveableEntity.getX();
+		int moveableEntityY = moveableEntity.getY();
+		
+		if(moveableEntityX == 0 || moveableEntityX == sizeX-1 || moveableEntityY == 0 || moveableEntityY == sizeY-1) {
+			return false;
+		}
+		
+		Tile targetTile = this.tiles[moveableEntityX+x][moveableEntityY+y];
+		
+		return moveableEntity.moveTo(targetTile);
 	}
 }
