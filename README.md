@@ -19,4 +19,4 @@ Jeder Buchstabe in der Mapdatei wird durch eine Grafik ersetzt. Folgende Tiles s
 
 ## TO DO
 
-* win() und lose() in Map
+* gerade nichts
