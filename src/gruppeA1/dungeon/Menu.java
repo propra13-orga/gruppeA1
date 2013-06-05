@@ -99,15 +99,6 @@ public class Menu extends JComponent implements ActionListener {
 			eventListener.handleMenuEvent(event);
 		}
 	}
-	
-	/*public void paintComponent(Graphics graphics) {
-		super.paintComponent(graphics);
-		
-		Graphics2D graphics2D = (Graphics2D) graphics;
-		
-		graphics2D.setPaint(new Color(255, 255, 255, 128));
-		graphics2D.fill(new Rectangle2D.Double(0, 0, 480, 480));
-	}*/
 
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
