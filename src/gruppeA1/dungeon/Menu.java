@@ -46,6 +46,10 @@ public class Menu extends JComponent implements ActionListener {
 
 		String message = "";
 		
+		if (this.state == "main") {
+			message = "Dungeon Crawler Deluxe";
+		}
+		
 		if (this.state == "win") {
 			message = "Gewonnen!";
 		}
