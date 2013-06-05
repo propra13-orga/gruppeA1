@@ -138,6 +138,14 @@ public class Map extends JComponent {
 		}
 	}
 	
+	public void moveEnemy(Enemy enemy, int x, int y) {
+		if (this.tryToMoveEntity(enemy, x, y)) {
+			if (this.player.getX() == enemy.getX() && this.player.getY() == enemy.getY()) {
+				this.game.stopGame(false);
+			}
+		}
+	}
+	
 	public boolean tryToMoveEntity(MoveableEntity moveableEntity, int x, int y) {
 		int moveableEntityX = moveableEntity.getX();
 		int moveableEntityY = moveableEntity.getY();

@@ -12,9 +12,9 @@ public class MapTask extends TimerTask {
 			int moveY = this.getRandomStep();
 			
 			if (moveX > 0 || moveX < 0) {
-				this.map.tryToMoveEntity(enemy, moveX, 0);
+				this.map.moveEnemy(enemy, moveX, 0);
 			} else if (moveY > 0 || moveY < 0) {
-				this.map.tryToMoveEntity(enemy, 0, moveY);
+				this.map.moveEnemy(enemy, 0, moveY);
 			}
 		}
 		
