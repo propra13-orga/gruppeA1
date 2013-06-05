@@ -1,6 +1,6 @@
 package gruppeA1.dungeon;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 
 public class Main extends JFrame implements EventListener {
 	private static final long serialVersionUID = 1L;
