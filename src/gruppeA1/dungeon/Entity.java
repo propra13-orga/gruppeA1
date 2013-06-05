@@ -5,24 +5,32 @@ import java.awt.Graphics2D;
 import javax.swing.ImageIcon;
 
 public class Entity {
+	protected Map map;
+	
+	public Map getMap() {
+		return this.map;
+	}
+	
 	protected int x;
 	protected int y;
 	
 	public int getX() {
-		return x;
+		return this.x;
 	}
 
 	public int getY() {
-		return y;
+		return this.y;
 	}
 	
 	protected int size;
 		
-	public Entity (int x, int y, int size) {
+	public Entity (int x, int y, int size, Map map) {
 		this.x = x;
 		this.y = y;
 		
 		this.size = size;
+		
+		this.map = map;
 	}
 	
 	protected void draw(Graphics2D graphics2D, char type) {

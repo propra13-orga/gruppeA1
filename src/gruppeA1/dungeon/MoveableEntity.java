@@ -1,8 +1,8 @@
 package gruppeA1.dungeon;
 
 public class MoveableEntity extends Entity {
-	public MoveableEntity(int x, int y, int size) {
-		super(x, y, size);
+	public MoveableEntity(int x, int y, int size, Map map) {
+		super(x, y, size, map);
 	}
 	
 	public void move(int x, int y) {

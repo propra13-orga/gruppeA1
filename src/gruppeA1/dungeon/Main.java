@@ -1,78 +1,86 @@
 package gruppeA1.dungeon;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class Main extends JFrame implements ActionListener {
+public class Main extends JFrame implements EventListener {
 	private static final long serialVersionUID = 1L;
 	
-	private JButton start;
-	/*private JButton settings;
-	private JButton info;*/
-	private JButton quit;
+	private Game game;
+	private Menu menu;
+	
+	private GameKeyAdapter gameKeyAdapter;
 	
 	public static void main(String[] args) {
-		Main frame = new Main("Dungeon Crawler Deluxe");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(480,480);
-		frame.setLayout(null);
-		frame.setVisible(true);
+		new Main();
 	}
 	
-	public Main(String title) {
-		super(title);
+	public Main() {
+		super("Dungeon Crawler Deluxe");
 		
-		start = new JButton("Spiel Starten");
-		start.setBounds(40,380,160,40);
-		start.addActionListener(this);
-		add(start);
+		this.game = new Game();
+		this.menu = new Menu();
 		
-		/*settings = new JButton("Optionen");
-		settings.setBounds(120,90,160,40);
-		settings.addActionListener(this);
-		add(settings);*/
+		this.gameKeyAdapter = new GameKeyAdapter(this.game);
 		
-		/*info = new JButton("Credits");
-		info.setBounds(120,140,160,40);
-		info.addActionListener(this);
-		add(info);*/
+		this.game.addGameListener(this);
+		this.menu.addMenuListener(this);
 		
-		quit = new JButton("Spiel verlassen");
-		quit.setBounds(280,380,160,40);
-		quit.addActionListener(this);
-		add(quit);
+		this.menu.setState("main");
+		
+		this.game.setVisible(false);
+		this.menu.setVisible(true);
+		
+		this.add(this.game);
+		this.add(this.menu);
+		
+		this.setSize(480, 500);
+		this.setVisible(true);
+		this.setFocusable(true);
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == start) {
-			startMap();
+	@Override
+	public void handleMenuEvent(Event event) {
+		String type = event.getType();
+		
+		if (type == "start") {
+			this.game.startGame();
 		}
-		/*else if(e.getSource() == info) {
-			Object[] options = {"OK"};
-			
-			JOptionPane.showOptionDialog(null, "Das Spiel wurde programmiert von Mir und ich hab auch etwas gemacht! hihi :D!", "Credits", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-		}*/
-		/*else if(e.getSource() == einstellungen){
-							auswahl();
-		}*/
-		else if(e.getSource() == quit) {
+		
+		if (type == "quit") {
 			System.exit(0);
 		}
 	}
-	
-	public static void startMap() {
-		JFrame map = new JFrame("Dungeon Crawler Deluxe");
-		map.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		map.setSize(480,500);
-		map.setVisible(true);
-		map.add(new Map(1));
+
+	@Override
+	public void handleGameEvent(Event event) {
+		String type = event.getType();
+		
+		if (type == "go") {
+			this.addKeyListener(this.gameKeyAdapter);
+			
+			this.game.setVisible(true);
+			
+			this.menu.setVisible(false);
+		}
+		
+		if (type == "win") {
+			this.removeKeyListener(this.gameKeyAdapter);
+			
+			this.game.setVisible(false);
+			
+			this.menu.setState("win");
+			this.menu.setVisible(true);
+		}
+		
+		if (type == "lose") {
+			this.removeKeyListener(this.gameKeyAdapter);
+			
+			this.game.setVisible(false);
+			
+			this.menu.setState("lose");
+			this.menu.setVisible(true);
+		}
 	}
-	
-	/*public static void auswahl() {
-		JFrame auswahl = new JFrame("Einstellungen");
-		auswahl.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		auswahl.setSize(400,400);
-		auswahl.setVisible(true);
-	}*/
 }

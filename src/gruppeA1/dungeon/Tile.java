@@ -30,8 +30,12 @@ public class Tile extends Entity {
 		return isExit;
 	}
 	
-	public Tile(int x, int y, int size, char type) {
-		super(x, y, size);
+	public void setEnemy(boolean isEnemy) {
+		this.isEnemy = isEnemy;
+	}
+	
+	public Tile(int x, int y, int size, Map map, char type) {
+		super(x, y, size, map);
 		
 		this.type = type;
 		
