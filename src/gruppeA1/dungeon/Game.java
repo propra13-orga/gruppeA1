@@ -106,8 +106,10 @@ public class Game extends JComponent {
 	}
 	
 	private void startTasks() {
+		int mapTaskFrequency = (lastMapNr*200)-(this.currentMap.getMapNr()*100);
+		
 		this.timer = new Timer();
-		this.timer.scheduleAtFixedRate(new MapTask(this.currentMap), 1000, 1000);
+		this.timer.scheduleAtFixedRate(new MapTask(this.currentMap), mapTaskFrequency, mapTaskFrequency);
 	}
 	
 	private void stopTasks() {
